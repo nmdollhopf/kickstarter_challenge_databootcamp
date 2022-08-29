@@ -19,7 +19,7 @@ All data analysis was completed in Microsoft Excel 2016 with built-in functions;
 With the dates now in Excel- and human-readable formats, the duration for each kickstarter was calculated with a simple subtraction on the cells containing the start and end dates of each kickstarter. 
 
 The provided category of each kickstarter was described as a consistently-formatted, single string subdivided into a parent- and sub-category. For ease of filtering later in the analysis, each was divided along the delimiter, `/`, using the `Text to Columns` feature, resulting in the example below (with unrelated columns minimized).
-![Splitting the category column](./Resources/categoryDivisionExample.png)
+![Splitting the category column](./Resources/categoryDivisionExample.PNG)
 
 Although unused for the present analyses, two additional statistics were calculated from the provided data. With the `[target fund]` amount, `[pledged funding]`, and `[number of backers]` all provided, we calculated the funding goals expressed as percentages and the average donation amount per backer, respectively,
 ```
@@ -35,7 +35,8 @@ Along with the country of origin for each project, the dataset includes the curr
 ### Analysis of Outcomes Based on Launch Date
 
 With the cyclical nature of spending, the first question we asked as data analysts was if there was a correlation between a project's funding goals being met and the time of year the Kickstarter campaign was launched. To this end, we aimed to sort our campaigns by some measure of the starting date and count how many successes, failures, and cancellations there were in each of the date measures. The built-in functionality of Excel's PivotTable provided this solution. The data was sorted into the following pivot fields:
-![PivotTable fields of Outcomes vs Launch date](./Resources/outcomeLaunchPivotFields.png)
+
+![PivotTable fields of Outcomes vs Launch date](./Resources/outcomeLaunchPivotFields.PNG)
 
 In the image: 
 1) `Parent Category` was filtered to theatre, as was our intention described above; 
@@ -77,7 +78,8 @@ Though most funding goal bins are in increments of $5k, the first two groupings 
     * B) upper funding goal limit  
 
 Testing the data on both the funding goals groupings and outcomes allows us to create a two-dimensional results array, much like a PivotTable. Each conditional is composed of an argument pair: the \[sub\]array to test and the conditional test. An example of a `COUNTIFS()` call to populate our results is below. In this example, we test the `outcome` column (F\:F) for the `Successful` string, the `subcategory` column (R\:R) for `plays` to filter the results, and the funding goal column (D\:D) to be <u>\></u>$1k *AND* <$5k.
-![Example of the COUNTIFS() function](./Resources/countifsExampleSuccessful5k_10k.png)
+
+![Example of the COUNTIFS() function](./Resources/countifsExampleSuccessful5k_10k.PNG)
 
 After populating an array of the `Number Successful` and `Number Failed` counts for each funding goal bin, the counts were added together for a total number of projects in that bin and then expressed as percentages, respectively,
 ```
@@ -100,6 +102,7 @@ The solution is rather simple: the grouping functionality of a PivotTable's rows
 ### Outcomes Based on Launch Dates
 
 Below is a measure of successful and failed Kickstarter theatre projects as a function of what month the campaign was launched in, color-coded by outcome.
+
 ![Theatre Kickstarter Outcomes vs Launch Month](./Resources/Theater_Outcomes_vs_Launch.png)
 
 Immediately, we can see a few things:  
@@ -110,6 +113,7 @@ Immediately, we can see a few things:
 So, Louise should start the Kickstarter campaign in May and that's done-and-dusted, correct? It turns out that is correct, but we need to think about it both in absolute and relative numbers. While there is a peak in successful outcomes in May, that's also when the number of failed projects hits a global maximum, so maybe May isn't such a safe bet. In absolute numbers, there are always more successful projects than failed, so an absolute argument would suggest any time of year is a good time to start the campaign. 
 
 A relative argument allows us to look at the number of successful outcomes relative to the total number of started projects. As a baseline, we can calculate that, over a year, \~61\% of projects are successful. In May, 111 campaigns are successful out of a total 166 started, giving a success rate of \~67\%, an increase of \<6\% over the average. The following stacked bar chart shows the relative successes, failures, and cancellations of started projects.
+
 ![Relative Comparison of Outcomes by Month](./Resources/Outcomes_vs_Launch_stackedBar.png)
 
 From this graph, we once again see that the peak success chance occurs in May, though the difference is much less stark than the previous graph. We can, with some confidence, assert May is the best month to start a Kickstarter campaign. 
@@ -120,6 +124,7 @@ There's yet more to take out of the graphs: what's the worst month? In both abso
 ### Outcomes Organized by Funding Goal
 
 The following graph showcases the relative outcomes of successful and failed Kickstarter plays campaigns against the funding goal of the campaigns.
+
 ![Relative Outcomes of Plays Kickstarters vs the Funding Goals](./Resources/Outcomes_vs_Goals.png)
 
 Much like the above discussions, our answer that less-ambitious projects are fully funded at a higher rate \[than their more-ambitious counterparts\] comes with a deeper discussion. Immediately, it is evident that the highest success chances are for projects that ask for \<$5k to be funded. The lines in our graph intersect, meaning that more projects fail than succeed, somewhere around the $20k mark and the disparity between failed and successful projects continues to grow. Well, the disparity grows until just after the $30k mark and our lines start criss-crossing again, suggesting Louise could ask for a sweet spot of funding around $40k.
