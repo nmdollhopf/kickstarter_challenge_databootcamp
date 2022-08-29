@@ -19,6 +19,7 @@ All data analysis was completed in Microsoft Excel 2016 with built-in functions;
 With the dates now in Excel- and human-readable formats, the duration for each kickstarter was calculated with a simple subtraction on the cells containing the start and end dates of each kickstarter. 
 
 The provided category of each kickstarter was described as a consistently-formatted, single string subdivided into a parent- and sub-category. For ease of filtering later in the analysis, each was divided along the delimiter, `/`, using the `Text to Columns` feature, resulting in the example below (with unrelated columns minimized).
+
 ![Splitting the category column](./Resources/categoryDivisionExample.PNG)
 
 Although unused for the present analyses, two additional statistics were calculated from the provided data. With the `[target fund]` amount, `[pledged funding]`, and `[number of backers]` all provided, we calculated the funding goals expressed as percentages and the average donation amount per backer, respectively,
