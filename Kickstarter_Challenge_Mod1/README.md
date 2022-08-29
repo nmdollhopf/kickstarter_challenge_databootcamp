@@ -69,7 +69,7 @@ Because each project is able to have any funding goal, it makes sense to bin the
 * $45k <u>\<</u> goal \< $50k
 * $50k <u>\<</u> goal
 
-Though most funding goal bins are in increments of $5k, the first two groupings are unequal in size to the latter groupings and built-in functionalities of the PivotTable cannot be used ([see additional discussion](#challenges-and-difficulties-dncountered)). To work around this issue, a self-made algorithm was developed using built-in functions, as noted earlier, using the `COUNTIFS()` function. `COUNTIFS()` is a function that will count the number of occurences a series of cells in a provided array satisifes each condition (i.e. AND operation) provided in the function call. Each call of `COUNTIFS()` allows us to thus count the number of times an outcome occurs by providing the following conditions:
+Though most funding goal bins are in increments of $5k, the first two groupings are unequal in size to the latter groupings and built-in functionalities of the PivotTable cannot be used ([see additional discussion](#challenges-and-difficulties-encountered)). To work around this issue, a self-made algorithm was developed using built-in functions, as noted earlier, using the `COUNTIFS()` function. `COUNTIFS()` is a function that will count the number of occurences a series of cells in a provided array satisifes each condition (i.e. AND operation) provided in the function call. Each call of `COUNTIFS()` allows us to thus count the number of times an outcome occurs by providing the following conditions:
 1) the subcategory was listed as `plays`
 2) the `outcome`, listed as 
     * i) `successful` or
