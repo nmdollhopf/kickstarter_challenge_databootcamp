@@ -57,17 +57,17 @@ In tandem with any discussion around money comes the question of greed, which se
 
 Because each project is able to have any funding goal, it makes sense to bin the funding goals into set goal intervals; luckily, Louise provided the funding goal groupings she desired the analysis to be conducted on:
 * goal \< $1k
-* $1k <u>\<</u> goal \< $5k
-* $5k <u>\<</u> goal \< $10k
-* $10k <u>\<</u> goal \< $15k
-* $15k <u>\<</u> goal \< $20k
-* $20k <u>\<</u> goal \< $25k
-* $25k <u>\<</u> goal \< $30k
-* $30k <u>\<</u> goal \< $35k
-* $35k <u>\<</u> goal \< $40k
-* $40k <u>\<</u> goal \< $45k
-* $45k <u>\<</u> goal \< $50k
-* $50k <u>\<</u> goal
+* $1k <ins>\<</ins> goal \< $5k
+* $5k <ins>\<</ins> goal \< $10k
+* $10k <ins>\<</ins> goal \< $15k
+* $15k <ins>\<</ins> goal \< $20k
+* $20k <ins>\<</ins> goal \< $25k
+* $25k <ins>\<</ins> goal \< $30k
+* $30k <ins>\<</ins> goal \< $35k
+* $35k <ins>\<</ins> goal \< $40k
+* $40k <ins>\<</ins> goal \< $45k
+* $45k <ins>\<</ins> goal \< $50k
+* $50k <ins>\<</ins> goal
 
 Though most funding goal bins are in increments of $5k, the first two groupings are unequal in size to the latter groupings and built-in functionalities of the PivotTable cannot be used ([see additional discussion](#challenges-and-difficulties-encountered)). To work around this issue, a self-made algorithm was developed using built-in functions, as noted earlier, using the `COUNTIFS()` function. `COUNTIFS()` is a function that will count the number of occurences a series of cells in a provided array satisifes each condition (i.e. AND operation) provided in the function call. Each call of `COUNTIFS()` allows us to thus count the number of times an outcome occurs by providing the following conditions:
 1) the subcategory was listed as `plays`
